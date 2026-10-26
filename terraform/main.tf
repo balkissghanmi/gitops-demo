@@ -20,6 +20,7 @@ resource "helm_release" "argocd_apps" {
   namespace  = kubernetes_namespace.argocd.metadata[0].name
   repository = "https://argoproj.github.io/argo-helm"
   chart      = "argocd-apps"
+  version    = "2.0.7"
   timeout    = 600
 
   values = [yamlencode({
